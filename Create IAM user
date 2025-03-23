@@ -1,0 +1,43 @@
+# Create an IAM User
+
+## **Task Overview**
+This document outlines the steps taken to configure IAM security best practices in AWS.
+
+### Steps Completed ###
+* Created a new user with IAM Console Access
+* Add user to an Admin group
+  * Created new group called 'AccountAdmin'
+  * Added 'AdministratorAccess' managed policy to the new group
+  * Added new user to the 'AccountAdmin' group
+* Enabled MFA to the root user
+* Applied an IAM password policy using security best practices
+
+* What is Identity and Access Management (IAM)?
+  - A service that helps you securely manage access to your AWS resources. Create and control user, groups, roles, and policies to define who can access what within your AWS Environment
+* What is a root user?
+  - Root user is the initial account owner and is created when you make your account. Root user has unresticted access to all AWS resources
+* How is a root user different from an Admin user?
+  - Root user is created upon account creation
+  - Admin user is an IAM user with the 'AdministratorAccess' policy
+  - Root user cannot be restricted by IAM policies; Admin user can be restricted by IAM policies
+  - Admin user cannot close an account; Admin cannot change root user password or MFA
+* What is console access and programmatic access?
+  - Console Access is made via a web-based management console. Programmatic access is made via CLI, API's or SDK's
+* What is the access key and secret key?
+  - Access keys are used to authenticate and authorize programmatic access to AWS services. Secret key is a part of the access key
+* What is MFA and why is it important?
+  - Multi-factor Authentication(MFA) is an extra security layer that requires you to provide two forms of authentication; Further protects against unauthorized access to your resources
+* What are policies and how can you create them?
+  - Policies are JSON documents that allow you to specify who can access AWS resources, and what actions they can perform on those resources
+* What are roles and how can you create them?
+  - A role is an IAM identity you create that has specific permissions. A role can be associated with multiple AWS entities.
+* What is the difference between a role and a policy?
+  - Roles are assumed by AWS entities; Policies are attached to roles and define what actions are permitted by that role
+* What is a user group?
+  - A user group is a collection of multiple IAM users. Allows you to manage the permissions of multiple users at once.
+* What are some good security practices for password policies?
+  - minimum length of 12 characters
+  - require at least one uppercase letter
+  - require at least one lowercase letter
+  - require at least one number
+  - require at least one non-alphnumeric character
